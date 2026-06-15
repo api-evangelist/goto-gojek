@@ -1,0 +1,1448 @@
+{
+  "item": [
+    {
+      "id": "132f6619-598a-4323-a218-935b89413df8",
+      "name": "Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "892f7aab-21ce-4f36-aa38-17bdd80af1fd",
+          "name": "Charge a transaction",
+          "request": {
+            "name": "Charge a transaction",
+            "description": {
+              "content": "Initiate a Core API charge. Required fields are `payment_type` and `transaction_details`. The payload shape depends on the payment method (credit_card, bank_transfer, gopay, qris, etc.).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "charge"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"payment_type\": \"<string>\",\n  \"transaction_details\": {\n    \"order_id\": \"<string>\",\n    \"gross_amount\": \"<number>\"\n  },\n  \"item_details\": [\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"customer_details\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"billing_address\": \"<object>\",\n    \"shipping_address\": \"<object>\"\n  },\n  \"credit_card\": \"<object>\",\n  \"bank_transfer\": \"<object>\",\n  \"gopay\": \"<object>\",\n  \"qris\": \"<object>\",\n  \"custom_field1\": \"<string>\",\n  \"custom_field2\": \"<string>\",\n  \"custom_field3\": \"<string>\",\n  \"metadata\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9dbbb2ba-f011-4508-b9a5-d57b54fe4fd4",
+              "name": "Charge response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "charge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payment_type\": \"<string>\",\n  \"transaction_details\": {\n    \"order_id\": \"<string>\",\n    \"gross_amount\": \"<number>\"\n  },\n  \"item_details\": [\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"customer_details\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"billing_address\": \"<object>\",\n    \"shipping_address\": \"<object>\"\n  },\n  \"credit_card\": \"<object>\",\n  \"bank_transfer\": \"<object>\",\n  \"gopay\": \"<object>\",\n  \"qris\": \"<object>\",\n  \"custom_field1\": \"<string>\",\n  \"custom_field2\": \"<string>\",\n  \"custom_field3\": \"<string>\",\n  \"metadata\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status_code\": \"string\",\n  \"status_message\": \"string\",\n  \"transaction_id\": \"string\",\n  \"order_id\": \"string\",\n  \"merchant_id\": \"string\",\n  \"gross_amount\": \"string\",\n  \"currency\": \"string\",\n  \"payment_type\": \"string\",\n  \"transaction_time\": \"string\",\n  \"transaction_status\": \"string\",\n  \"fraud_status\": \"string\",\n  \"actions\": [\n    {\n      \"name\": \"string\",\n      \"method\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"method\": \"string\",\n      \"url\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adb8f5b8-a839-4ca9-b16d-3aca66b7b69f",
+              "name": "Validation error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "charge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payment_type\": \"<string>\",\n  \"transaction_details\": {\n    \"order_id\": \"<string>\",\n    \"gross_amount\": \"<number>\"\n  },\n  \"item_details\": [\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"customer_details\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"billing_address\": \"<object>\",\n    \"shipping_address\": \"<object>\"\n  },\n  \"credit_card\": \"<object>\",\n  \"bank_transfer\": \"<object>\",\n  \"gopay\": \"<object>\",\n  \"qris\": \"<object>\",\n  \"custom_field1\": \"<string>\",\n  \"custom_field2\": \"<string>\",\n  \"custom_field3\": \"<string>\",\n  \"metadata\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1abddd58-ef6f-41ff-9de4-e715f306739c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "charge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payment_type\": \"<string>\",\n  \"transaction_details\": {\n    \"order_id\": \"<string>\",\n    \"gross_amount\": \"<number>\"\n  },\n  \"item_details\": [\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"customer_details\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"billing_address\": \"<object>\",\n    \"shipping_address\": \"<object>\"\n  },\n  \"credit_card\": \"<object>\",\n  \"bank_transfer\": \"<object>\",\n  \"gopay\": \"<object>\",\n  \"qris\": \"<object>\",\n  \"custom_field1\": \"<string>\",\n  \"custom_field2\": \"<string>\",\n  \"custom_field3\": \"<string>\",\n  \"metadata\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c060eb1-20df-4735-b76d-265578dda353",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "charge"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payment_type\": \"<string>\",\n  \"transaction_details\": {\n    \"order_id\": \"<string>\",\n    \"gross_amount\": \"<number>\"\n  },\n  \"item_details\": [\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"price\": \"<number>\",\n      \"quantity\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"customer_details\": {\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"phone\": \"<string>\",\n    \"billing_address\": \"<object>\",\n    \"shipping_address\": \"<object>\"\n  },\n  \"credit_card\": \"<object>\",\n  \"bank_transfer\": \"<object>\",\n  \"gopay\": \"<object>\",\n  \"qris\": \"<object>\",\n  \"custom_field1\": \"<string>\",\n  \"custom_field2\": \"<string>\",\n  \"custom_field3\": \"<string>\",\n  \"metadata\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91b4b886-81bf-4083-8a16-e7d70d3dcaa2",
+          "name": "Get transaction status",
+          "request": {
+            "name": "Get transaction status",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3c1757d-ac5f-41d7-acee-3a16e787aee7",
+              "name": "Transaction status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status_code\": \"string\",\n  \"status_message\": \"string\",\n  \"transaction_id\": \"string\",\n  \"order_id\": \"string\",\n  \"gross_amount\": \"string\",\n  \"currency\": \"string\",\n  \"payment_type\": \"string\",\n  \"transaction_status\": \"deny\",\n  \"fraud_status\": \"accept\",\n  \"transaction_time\": \"string\",\n  \"settlement_time\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e77df2b7-a38d-45aa-80af-a596f622440e",
+          "name": "Get B2B transaction status",
+          "request": {
+            "name": "Get B2B transaction status",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "status",
+                "b2b"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f702bfbf-ccd1-459c-8f27-e8f81989f5f2",
+              "name": "B2B transaction status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "status",
+                    "b2b"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe877c57-9dc5-449d-9a41-c4b951bf0be1",
+          "name": "Approve a challenged transaction",
+          "request": {
+            "name": "Approve a challenged transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "approve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d382cf7-d719-4ce6-ae10-d0fe19cd7599",
+              "name": "Approved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "approve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c44db0c0-1a5c-4f12-916e-795ee4ac29e1",
+          "name": "Deny a challenged transaction",
+          "request": {
+            "name": "Deny a challenged transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "deny"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e3cf8b0-08e7-4418-826f-d7ddf718a2fd",
+              "name": "Denied",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "deny"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ae915b6-b9c8-43ab-8498-f48483aa2a11",
+          "name": "Cancel a transaction",
+          "request": {
+            "name": "Cancel a transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e37a4be-2f55-4cf5-8dcd-321e77774db1",
+              "name": "Cancelled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d374a5ef-6c6a-46e2-bfc0-bd69118977af",
+          "name": "Expire a pending transaction",
+          "request": {
+            "name": "Expire a pending transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "expire"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "852dbdd9-0984-48ae-88e0-bde0afa05ba3",
+              "name": "Expired",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "expire"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d3646b8-9202-4d70-b935-dc3cba84fa15",
+          "name": "Refund a transaction",
+          "request": {
+            "name": "Refund a transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "refund"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refund_key\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"reason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fe41e8ed-3993-4a81-9030-8b520d2ca414",
+              "name": "Refunded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "refund"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refund_key\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c03eeeaa-2c02-4df5-9cef-d6cb2d3b4489",
+          "name": "Direct refund a transaction",
+          "request": {
+            "name": "Direct refund a transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                ":orderId",
+                "refund",
+                "online",
+                "direct"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderId",
+                  "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refund_key\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"reason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b164d330-ea32-416b-9563-0c8575188229",
+              "name": "Refunded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    ":orderId",
+                    "refund",
+                    "online",
+                    "direct"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "orderId",
+                      "description": "(Required) Either the merchant order_id or Midtrans transaction_id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refund_key\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98fb934d-5818-4da8-a6d8-cebc093f81e7",
+          "name": "Capture a pre-authorized credit card transaction",
+          "request": {
+            "name": "Capture a pre-authorized credit card transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "capture"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transaction_id\": \"<string>\",\n  \"gross_amount\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3e6dff3c-b9da-42ed-8c03-0331f434230c",
+              "name": "Captured",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "capture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transaction_id\": \"<string>\",\n  \"gross_amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5727ec02-2dd8-49de-ad67-a08602cc1731",
+      "name": "Tokenization",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9707cfca-e34d-41b9-8351-4c4ed6dfe56e",
+          "name": "Register a credit card (tokenize)",
+          "request": {
+            "name": "Register a credit card (tokenize)",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "card",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "card_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "card_exp_month",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "card_exp_year",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_key",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a71a114f-41b2-4128-9d43-8469c4346d74",
+              "name": "Registered card token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "card",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "card_exp_month",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "card_exp_year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2d94fdd-f339-4524-b36f-c24ee6cae22e",
+          "name": "Get a one-time card payment token",
+          "request": {
+            "name": "Get a one-time card payment token",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "card_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "card_exp_month",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "card_exp_year",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "card_cvv",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_key",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e57f4bbf-49d2-41de-a1bc-19fd3d34f9ee",
+              "name": "Token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "card_exp_month",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "card_exp_year",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "card_cvv",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3c04796a-3288-4c48-94c6-b154c8e0813a",
+          "name": "BIN lookup",
+          "request": {
+            "name": "BIN lookup",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "bins",
+                ":binNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "binNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa202b8a-70e1-46ad-8e34-893d7d811310",
+              "name": "BIN info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "bins",
+                    ":binNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "binNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.sandbox.midtrans.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "28c63ee2-4b54-496b-8bbe-4c78de032c52",
+    "name": "Midtrans Core API (GoTo Financial)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Best-effort OpenAPI 3.1 for the Midtrans Core API operated by GoTo Financial (a GoTo Group company). Covers charge, capture, approve, deny, cancel, expire, refund, and status endpoints. Authentication is HTTP Basic using the Server Key as the username with an empty password.",
+      "type": "text/plain"
+    }
+  }
+}
