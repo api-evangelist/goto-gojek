@@ -196,7 +196,7 @@ authentication:
   - type: HMACSignature
     description: Payment APIs sign requests with HMAC over a shared merchant secret.
 common:
-  - type: CorporateWebsite
+  - type: Website
     url: https://www.gotocompany.com/
   - type: GojekWebsite
     url: https://www.gojek.com/
