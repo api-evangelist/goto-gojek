@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/goto-gojek-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Server Key as username, empty password
+  sources:
+  - openapi/goto-gojek-openapi.yml
