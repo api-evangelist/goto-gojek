@@ -196,6 +196,8 @@ authentication:
   - type: HMACSignature
     description: Payment APIs sign requests with HMAC over a shared merchant secret.
 common:
+  - type: AgenticAccess
+    url: agentic-access/goto-gojek-agentic-access.yml
   - type: DomainSecurity
     url: security/goto-gojek-domain-security.yml
   - type: Authentication
