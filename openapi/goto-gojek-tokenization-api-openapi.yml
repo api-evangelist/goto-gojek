@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Midtrans Core API (GoTo Financial) Tokenization API
+  description: Best-effort OpenAPI 3.1 for the Midtrans Core API operated by GoTo Financial (a GoTo Group company). Covers charge, capture, approve, deny, cancel, expire, refund, and status endpoints. Authentication is HTTP Basic using the Server Key as the username with an empty password.
+  version: v2
+servers:
+- url: https://api.sandbox.midtrans.com
+  description: Sandbox
+- url: https://api.midtrans.com
+  description: Production
+security:
+- basicAuth: []
+tags:
+- name: Tokenization
+paths:
+  /v2/card/register:
+    get:
+      tags:
+      - Tokenization
+      summary: Register a credit card (tokenize)
+      operationId: registerCard
+      parameters:
+      - in: query
+        name: card_number
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: card_exp_month
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: card_exp_year
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: client_key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Registered card token
+  /v2/token:
+    get:
+      tags:
+      - Tokenization
+      summary: Get a one-time card payment token
+      operationId: getToken
+      parameters:
+      - in: query
+        name: card_number
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: card_exp_month
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: card_exp_year
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: card_cvv
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: client_key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Token
+  /v1/bins/{binNumber}:
+    get:
+      tags:
+      - Tokenization
+      summary: BIN lookup
+      operationId: getBin
+      parameters:
+      - in: path
+        name: binNumber
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: BIN info
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Server Key as username, empty password
