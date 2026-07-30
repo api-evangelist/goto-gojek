@@ -18,9 +18,22 @@ description: |
   level (Gojek partner programs, GoPay PSP integrations, TikTok
   Shop Open Platform for the former Tokopedia surface).
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: Partner
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/goto-gojek.png
 tags:
   - Superapp
   - Ride Hailing
@@ -37,128 +50,175 @@ created: '2026-05-23'
 modified: '2026-05-23'
 specificationVersion: '0.20'
 apis:
-  - aid: goto-gojek:gosend
-    name: GoSend Logistics API
-    description: |
-      GoSend is Gojek's on-demand last-mile courier service. The
-      GoSend API lets e-commerce platforms, marketplaces, and ERP
-      systems book GoSend Instant and Same-Day deliveries, fetch
-      quotes, track couriers, and receive lifecycle webhook events
-      for Indonesia coverage.
-    humanURL: https://www.gojek.com/en-id/gosend/
-    baseURL: https://api.gojekapi.com
-    tags:
-      - Last-Mile
-      - Couriers
-      - Indonesia
-      - Logistics
-    properties:
-      - type: ProductPage
-        url: https://www.gojek.com/en-id/gosend/
-      - type: BusinessIntegration
-        url: https://www.gojek.com/en-id/gosend/integrate/
-  - aid: goto-gojek:gobiz
-    name: GoBiz Merchant Platform
-    description: |
-      GoBiz is the merchant operating platform for restaurants and
-      retailers selling through GoFood and Gojek's on-demand
-      services. Partner POS / SaaS vendors integrate with GoBiz to
-      manage menus, store availability, order acknowledgement, and
-      fulfillment.
-    humanURL: https://gobiz.co.id/
-    baseURL: https://api.gobiz.co.id
-    tags:
-      - Merchant
-      - POS
-      - GoFood
-      - Menus
-      - Orders
-    properties:
-      - type: ProductPage
-        url: https://gobiz.co.id/
-  - aid: goto-gojek:gopay
-    name: GoPay Payments API
-    description: |
-      GoPay is GoTo Financial's e-money and digital wallet platform
-      in Indonesia. Online and offline merchants integrate via
-      partner payment service providers (e.g. Midtrans, Xendit,
-      DOKU) to accept GoPay for wallet checkout, QRIS, and
-      recurring billing.
-    humanURL: https://gopay.co.id/
-    baseURL: https://api.gopay.co.id
-    tags:
-      - Payments
-      - Digital Wallet
-      - QRIS
-      - Indonesia
-    properties:
-      - type: ProductPage
-        url: https://gopay.co.id/
-      - type: MerchantInfo
-        url: https://gopay.co.id/merchant
-  - aid: goto-gojek:midtrans
-    name: Midtrans Payment Gateway API
-    description: |
-      Midtrans is GoTo Financial's payment service provider business
-      in Indonesia. The Midtrans API offers full payment gateway
-      coverage — credit/debit cards, bank transfer (Permata,
-      Mandiri, BCA, BNI), e-wallets (GoPay, ShopeePay, OVO, DANA),
-      installments, and QRIS — for Indonesian merchants.
-    humanURL: https://docs.midtrans.com/
-    baseURL: https://api.midtrans.com
-    tags:
-      - Payments
-      - Payment Gateway
-      - Indonesia
-      - Cards
-      - E-Wallets
-      - QRIS
-    properties:
-      - type: Documentation
-        url: https://docs.midtrans.com/
-      - type: APIReference
-        url: https://docs.midtrans.com/en/welcome/index.html
-  - aid: goto-gojek:moka-pos
-    name: Moka POS Platform
-    description: |
-      Moka is GoTo Financial's cloud POS for Indonesian SMBs,
-      acquired in 2020. It exposes integration APIs and webhooks
-      for inventory sync, sales reporting, employee management,
-      and customer loyalty programs.
-    humanURL: https://www.mokapos.com/
-    baseURL: https://app.mokapos.com
-    tags:
-      - POS
-      - SMB
-      - Indonesia
-      - Inventory
-    properties:
-      - type: ProductPage
-        url: https://www.mokapos.com/
-  - aid: goto-gojek:tokopedia-tiktok-shop
-    name: Tokopedia / TikTok Shop Open Platform
-    description: |
-      Following GoTo's 2024 divestment of Tokopedia's e-commerce
-      operations to TikTok Shop, integrations for what was formerly
-      the Tokopedia Open API and Mitra Tokopedia developer surface
-      are now served via the TikTok Shop Partner Center, which
-      covers products, orders, fulfillment, returns, finance, and
-      marketing across the combined Tokopedia + TikTok Shop
-      marketplace in Indonesia.
-    humanURL: https://partner.tiktokshop.com/docv2/page/overview
-    baseURL: https://open-api.tiktokglobalshop.com
-    tags:
-      - E-commerce
-      - Marketplace
-      - Tokopedia
-      - TikTok Shop
-      - Orders
-      - Products
-    properties:
-      - type: Documentation
-        url: https://partner.tiktokshop.com/docv2/page/overview
-      - type: PartnerCenter
-        url: https://partner.tiktokshop.com/
+- aid: goto-gojek:gosend
+  name: GoSend Logistics API
+  description: >
+    GoSend is Gojek's on-demand last-mile courier service. The
+
+    GoSend API lets e-commerce platforms, marketplaces, and ERP
+
+    systems book GoSend Instant and Same-Day deliveries, fetch
+
+    quotes, track couriers, and receive lifecycle webhook events
+
+    for Indonesia coverage.
+  humanURL: https://www.gojek.com/en-id/gosend/
+  baseURL: https://api.gojekapi.com
+  tags:
+  - Last-Mile
+  - Couriers
+  - Indonesia
+  - Logistics
+  properties:
+  - type: ProductPage
+    url: https://www.gojek.com/en-id/gosend/
+  - type: BusinessIntegration
+    url: https://www.gojek.com/en-id/gosend/integrate/
+- aid: goto-gojek:gobiz
+  name: GoBiz Merchant Platform
+  description: >
+    GoBiz is the merchant operating platform for restaurants and
+
+    retailers selling through GoFood and Gojek's on-demand
+
+    services. Partner POS / SaaS vendors integrate with GoBiz to
+
+    manage menus, store availability, order acknowledgement, and
+
+    fulfillment.
+  humanURL: https://gobiz.co.id/
+  baseURL: https://api.gobiz.co.id
+  tags:
+  - Merchant
+  - POS
+  - GoFood
+  - Menus
+  - Orders
+  properties:
+  - type: ProductPage
+    url: https://gobiz.co.id/
+- aid: goto-gojek:gopay
+  name: GoPay Payments API
+  description: >
+    GoPay is GoTo Financial's e-money and digital wallet platform
+
+    in Indonesia. Online and offline merchants integrate via
+
+    partner payment service providers (e.g. Midtrans, Xendit,
+
+    DOKU) to accept GoPay for wallet checkout, QRIS, and
+
+    recurring billing.
+  humanURL: https://gopay.co.id/
+  baseURL: https://api.gopay.co.id
+  tags:
+  - Payments
+  - Digital Wallet
+  - QRIS
+  - Indonesia
+  properties:
+  - type: ProductPage
+    url: https://gopay.co.id/
+  - type: MerchantInfo
+    url: https://gopay.co.id/merchant
+- aid: goto-gojek:midtrans
+  name: Midtrans Payment Gateway API
+  description: >
+    Midtrans is GoTo Financial's payment service provider business
+
+    in Indonesia. The Midtrans API offers full payment gateway
+
+    coverage — credit/debit cards, bank transfer (Permata,
+
+    Mandiri, BCA, BNI), e-wallets (GoPay, ShopeePay, OVO, DANA),
+
+    installments, and QRIS — for Indonesian merchants.
+  humanURL: https://docs.midtrans.com/
+  baseURL: https://api.midtrans.com
+  tags:
+  - Payments
+  - Payment Gateway
+  - Indonesia
+  - Cards
+  - E-Wallets
+  - QRIS
+  properties:
+  - type: Documentation
+    url: https://docs.midtrans.com/
+  - type: APIReference
+    url: https://docs.midtrans.com/en/welcome/index.html
+- aid: goto-gojek:moka-pos
+  name: Moka POS Platform
+  description: >
+    Moka is GoTo Financial's cloud POS for Indonesian SMBs,
+
+    acquired in 2020. It exposes integration APIs and webhooks
+
+    for inventory sync, sales reporting, employee management,
+
+    and customer loyalty programs.
+  humanURL: https://www.mokapos.com/
+  baseURL: https://app.mokapos.com
+  tags:
+  - POS
+  - SMB
+  - Indonesia
+  - Inventory
+  properties:
+  - type: ProductPage
+    url: https://www.mokapos.com/
+- aid: goto-gojek:tokopedia-tiktok-shop
+  name: Tokopedia / TikTok Shop Open Platform
+  description: >
+    Following GoTo's 2024 divestment of Tokopedia's e-commerce
+
+    operations to TikTok Shop, integrations for what was formerly
+
+    the Tokopedia Open API and Mitra Tokopedia developer surface
+
+    are now served via the TikTok Shop Partner Center, which
+
+    covers products, orders, fulfillment, returns, finance, and
+
+    marketing across the combined Tokopedia + TikTok Shop
+
+    marketplace in Indonesia.
+  humanURL: https://partner.tiktokshop.com/docv2/page/overview
+  baseURL: https://open-api.tiktokglobalshop.com
+  tags:
+  - E-commerce
+  - Marketplace
+  - Tokopedia
+  - TikTok Shop
+  - Orders
+  - Products
+  properties:
+  - type: Documentation
+    url: https://partner.tiktokshop.com/docv2/page/overview
+  - type: PartnerCenter
+    url: https://partner.tiktokshop.com/
+- aid: goto-gojek:goto-gojek-tokenization-api
+  name: GoTo Group (Gojek + Tokopedia) Tokenization API
+  description: >-
+    The Tokenization API from GoTo Group (Gojek + Tokopedia) — 3 operation(s) for tokenization.
+  humanURL: https://www.gojek.com/en-id/gosend/
+  baseURL: https://api.gojekapi.com
+  tags:
+  - Tokenization
+  properties:
+  - type: OpenAPI
+    url: openapi/goto-gojek-tokenization-api-openapi.yml
+- aid: goto-gojek:goto-gojek-transactions-api
+  name: GoTo Group (Gojek + Tokopedia) Transactions API
+  description: >-
+    The Transactions API from GoTo Group (Gojek + Tokopedia) — 10 operation(s) for transactions.
+  humanURL: https://www.gojek.com/en-id/gosend/
+  baseURL: https://api.gojekapi.com
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/goto-gojek-transactions-api-openapi.yml
 features:
   - name: Indonesian Superapp Ecosystem
     description: Gojek superapp covers ride hailing, food delivery, parcel logistics, and bills payment in Indonesia and select SEA markets.
