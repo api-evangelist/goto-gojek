@@ -1,0 +1,16 @@
+{
+  "provider": "goto-gojek",
+  "sources": [
+    "goto-gojek-tokenization-api-openapi.yml",
+    "goto-gojek-transactions-api-openapi.yml"
+  ],
+  "outputs": [
+    "goto-gojek-tokenization-api-openapi.yml",
+    "goto-gojek-transactions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

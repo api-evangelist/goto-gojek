@@ -1,0 +1,322 @@
+openapi: 3.1.0
+info:
+  title: Midtrans Core API (GoTo Financial)
+  description: >-
+    Best-effort OpenAPI 3.1 for the Midtrans Core API operated by GoTo
+    Financial (a GoTo Group company). Covers charge, capture, approve, deny,
+    cancel, expire, refund, and status endpoints. Authentication is HTTP
+    Basic using the Server Key as the username with an empty password.
+  version: 'v2'
+servers:
+  - url: https://api.sandbox.midtrans.com
+    description: Sandbox
+  - url: https://api.midtrans.com
+    description: Production
+security:
+  - basicAuth: []
+tags:
+  - name: Transactions
+  - name: Tokenization
+paths:
+  /v2/charge:
+    post:
+      tags: [Transactions]
+      summary: Charge a transaction
+      description: >-
+        Initiate a Core API charge. Required fields are `payment_type` and
+        `transaction_details`. The payload shape depends on the payment
+        method (credit_card, bank_transfer, gopay, qris, etc.).
+      operationId: charge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ChargeRequest' }
+      responses:
+        '200':
+          description: Charge response
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ChargeResponse' }
+        '400': { description: Validation error }
+        '401': { description: Unauthorized }
+        '429': { description: Rate limit exceeded }
+  /v2/{orderId}/status:
+    get:
+      tags: [Transactions]
+      summary: Get transaction status
+      operationId: getStatus
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200':
+          description: Transaction status
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TransactionStatus' }
+  /v2/{orderId}/status/b2b:
+    get:
+      tags: [Transactions]
+      summary: Get B2B transaction status
+      operationId: getStatusB2b
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200': { description: B2B transaction status }
+  /v2/{orderId}/approve:
+    post:
+      tags: [Transactions]
+      summary: Approve a challenged transaction
+      operationId: approve
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200': { description: Approved }
+  /v2/{orderId}/deny:
+    post:
+      tags: [Transactions]
+      summary: Deny a challenged transaction
+      operationId: deny
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200': { description: Denied }
+  /v2/{orderId}/cancel:
+    post:
+      tags: [Transactions]
+      summary: Cancel a transaction
+      operationId: cancel
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200': { description: Cancelled }
+  /v2/{orderId}/expire:
+    post:
+      tags: [Transactions]
+      summary: Expire a pending transaction
+      operationId: expire
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      responses:
+        '200': { description: Expired }
+  /v2/{orderId}/refund:
+    post:
+      tags: [Transactions]
+      summary: Refund a transaction
+      operationId: refund
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RefundRequest' }
+      responses:
+        '200': { description: Refunded }
+  /v2/{orderId}/refund/online/direct:
+    post:
+      tags: [Transactions]
+      summary: Direct refund a transaction
+      operationId: refundDirect
+      parameters:
+        - $ref: '#/components/parameters/OrderId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RefundRequest' }
+      responses:
+        '200': { description: Refunded }
+  /v2/capture:
+    post:
+      tags: [Transactions]
+      summary: Capture a pre-authorized credit card transaction
+      operationId: capture
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [transaction_id, gross_amount]
+              properties:
+                transaction_id: { type: string }
+                gross_amount: { type: number }
+      responses:
+        '200': { description: Captured }
+
+  /v2/card/register:
+    get:
+      tags: [Tokenization]
+      summary: Register a credit card (tokenize)
+      operationId: registerCard
+      parameters:
+        - in: query
+          name: card_number
+          required: true
+          schema: { type: string }
+        - in: query
+          name: card_exp_month
+          required: true
+          schema: { type: string }
+        - in: query
+          name: card_exp_year
+          required: true
+          schema: { type: string }
+        - in: query
+          name: client_key
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Registered card token }
+  /v2/token:
+    get:
+      tags: [Tokenization]
+      summary: Get a one-time card payment token
+      operationId: getToken
+      parameters:
+        - in: query
+          name: card_number
+          required: true
+          schema: { type: string }
+        - in: query
+          name: card_exp_month
+          required: true
+          schema: { type: string }
+        - in: query
+          name: card_exp_year
+          required: true
+          schema: { type: string }
+        - in: query
+          name: card_cvv
+          required: true
+          schema: { type: string }
+        - in: query
+          name: client_key
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Token }
+  /v1/bins/{binNumber}:
+    get:
+      tags: [Tokenization]
+      summary: BIN lookup
+      operationId: getBin
+      parameters:
+        - in: path
+          name: binNumber
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: BIN info }
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Server Key as username, empty password
+  parameters:
+    OrderId:
+      name: orderId
+      in: path
+      required: true
+      schema: { type: string }
+      description: Either the merchant order_id or Midtrans transaction_id
+  schemas:
+    ChargeRequest:
+      type: object
+      required: [payment_type, transaction_details]
+      properties:
+        payment_type:
+          type: string
+          enum:
+            - credit_card
+            - bank_transfer
+            - echannel
+            - permata
+            - gopay
+            - qris
+            - shopeepay
+            - cstore
+            - akulaku
+            - kredivo
+        transaction_details:
+          type: object
+          required: [order_id, gross_amount]
+          properties:
+            order_id: { type: string }
+            gross_amount: { type: number }
+        item_details:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              price: { type: number }
+              quantity: { type: integer }
+              name: { type: string }
+              category: { type: string }
+        customer_details:
+          type: object
+          properties:
+            first_name: { type: string }
+            last_name: { type: string }
+            email: { type: string, format: email }
+            phone: { type: string }
+            billing_address: { type: object }
+            shipping_address: { type: object }
+        credit_card: { type: object }
+        bank_transfer: { type: object }
+        gopay: { type: object }
+        qris: { type: object }
+        custom_field1: { type: string }
+        custom_field2: { type: string }
+        custom_field3: { type: string }
+        metadata: { type: object }
+    ChargeResponse:
+      type: object
+      properties:
+        status_code: { type: string }
+        status_message: { type: string }
+        transaction_id: { type: string }
+        order_id: { type: string }
+        merchant_id: { type: string }
+        gross_amount: { type: string }
+        currency: { type: string }
+        payment_type: { type: string }
+        transaction_time: { type: string }
+        transaction_status: { type: string }
+        fraud_status: { type: string }
+        actions:
+          type: array
+          items:
+            type: object
+            properties:
+              name: { type: string }
+              method: { type: string }
+              url: { type: string }
+    TransactionStatus:
+      type: object
+      properties:
+        status_code: { type: string }
+        status_message: { type: string }
+        transaction_id: { type: string }
+        order_id: { type: string }
+        gross_amount: { type: string }
+        currency: { type: string }
+        payment_type: { type: string }
+        transaction_status:
+          type: string
+          enum: [authorize, capture, settlement, pending, deny, cancel, expire, failure, refund, partial_refund, chargeback, partial_chargeback]
+        fraud_status:
+          type: string
+          enum: [accept, deny, challenge]
+        transaction_time: { type: string }
+        settlement_time: { type: string }
+    RefundRequest:
+      type: object
+      properties:
+        refund_key: { type: string }
+        amount: { type: number }
+        reason: { type: string }
