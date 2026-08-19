@@ -1,0 +1,215 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Midtrans Core API (GoTo Financial) Tokenization Transactions API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Charge a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/charge",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Initiate a Core API charge. Required fields are `payment_type` and `transaction_details`. The payload shape depends on the payment method (credit_card, bank_transfer, gopay, qris, etc.)."
+        },
+        {
+          "info": {
+            "name": "Get transaction status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/status",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ]
+          },
+          "docs": "Get transaction status"
+        },
+        {
+          "info": {
+            "name": "Get B2B transaction status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/status/b2b",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ]
+          },
+          "docs": "Get B2B transaction status"
+        },
+        {
+          "info": {
+            "name": "Approve a challenged transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/approve",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ]
+          },
+          "docs": "Approve a challenged transaction"
+        },
+        {
+          "info": {
+            "name": "Deny a challenged transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/deny",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ]
+          },
+          "docs": "Deny a challenged transaction"
+        },
+        {
+          "info": {
+            "name": "Cancel a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/cancel",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ]
+          },
+          "docs": "Cancel a transaction"
+        },
+        {
+          "info": {
+            "name": "Expire a pending transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/expire",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ]
+          },
+          "docs": "Expire a pending transaction"
+        },
+        {
+          "info": {
+            "name": "Refund a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/refund",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Refund a transaction"
+        },
+        {
+          "info": {
+            "name": "Direct refund a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/:orderId/refund/online/direct",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "Either the merchant order_id or Midtrans transaction_id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Direct refund a transaction"
+        },
+        {
+          "info": {
+            "name": "Capture a pre-authorized credit card transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.sandbox.midtrans.com/v2/capture",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Capture a pre-authorized credit card transaction"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

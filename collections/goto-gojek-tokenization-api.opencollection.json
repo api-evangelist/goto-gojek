@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Midtrans Core API (GoTo Financial) Tokenization API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tokenization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register a credit card (tokenize)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.sandbox.midtrans.com/v2/card/register",
+            "params": [
+              {
+                "name": "card_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "card_exp_month",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "card_exp_year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Register a credit card (tokenize)"
+        },
+        {
+          "info": {
+            "name": "Get a one-time card payment token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.sandbox.midtrans.com/v2/token",
+            "params": [
+              {
+                "name": "card_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "card_exp_month",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "card_exp_year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "card_cvv",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "client_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a one-time card payment token"
+        },
+        {
+          "info": {
+            "name": "BIN lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.sandbox.midtrans.com/v1/bins/:binNumber",
+            "params": [
+              {
+                "name": "binNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "BIN lookup"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
