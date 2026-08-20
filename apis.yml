@@ -35,6 +35,17 @@ position: Provider
 access: Partner
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/goto-gojek.png
 tags:
+  - Super App
+  - Ride Hailing
+  - Food Delivery
+  - Last-Mile Logistics
+  - E-Commerce
+  - Digital Payments
+  - Indonesia
+  - Southeast Asia
+  - Gojek
+  - Tokopedia
+tags_raw:
   - Superapp
   - Ride Hailing
   - Food Delivery
@@ -65,6 +76,11 @@ apis:
   humanURL: https://www.gojek.com/en-id/gosend/
   baseURL: https://api.gojekapi.com
   tags:
+  - Last Mile
+  - Couriers
+  - Indonesia
+  - Logistics
+  tags_raw:
   - Last-Mile
   - Couriers
   - Indonesia
@@ -89,6 +105,12 @@ apis:
   humanURL: https://gobiz.co.id/
   baseURL: https://api.gobiz.co.id
   tags:
+  - Merchant
+  - Point-of-Sale
+  - GoFood
+  - Menus
+  - Order
+  tags_raw:
   - Merchant
   - POS
   - GoFood
@@ -160,6 +182,11 @@ apis:
   humanURL: https://www.mokapos.com/
   baseURL: https://app.mokapos.com
   tags:
+  - Point-of-Sale
+  - SMB
+  - Indonesia
+  - Inventory
+  tags_raw:
   - POS
   - SMB
   - Indonesia
@@ -186,6 +213,13 @@ apis:
   humanURL: https://partner.tiktokshop.com/docv2/page/overview
   baseURL: https://open-api.tiktokglobalshop.com
   tags:
+  - E-Commerce
+  - Marketplace
+  - Tokopedia
+  - TikTok Shop
+  - Order
+  - Product
+  tags_raw:
   - E-commerce
   - Marketplace
   - Tokopedia
@@ -215,6 +249,8 @@ apis:
   humanURL: https://www.gojek.com/en-id/gosend/
   baseURL: https://api.gojekapi.com
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
