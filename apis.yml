@@ -46,7 +46,7 @@ position: Provider
 access: Partner
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/goto-gojek.png
 tags:
-  - Super App
+  - Superapp
   - Ride Hailing
   - Food Delivery
   - Last-Mile Logistics
@@ -87,7 +87,7 @@ apis:
   humanURL: https://www.gojek.com/en-id/gosend/
   baseURL: https://api.gojekapi.com
   tags:
-  - Last Mile
+  - Last-Mile
   - Couriers
   - Indonesia
   - Logistics
@@ -117,7 +117,7 @@ apis:
   baseURL: https://api.gobiz.co.id
   tags:
   - Merchant
-  - Point-of-Sale
+  - POS
   - GoFood
   - Menus
   - Order
@@ -193,7 +193,7 @@ apis:
   humanURL: https://www.mokapos.com/
   baseURL: https://app.mokapos.com
   tags:
-  - Point-of-Sale
+  - POS
   - SMB
   - Indonesia
   - Inventory
