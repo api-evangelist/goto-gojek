@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Midtrans Core API (GoTo Financial) Tokenization Transactions API
   description: Best-effort OpenAPI 3.1 for the Midtrans Core API operated by GoTo Financial (a GoTo Group company). Covers charge, capture, approve, deny, cancel, expire, refund, and status endpoints. Authentication is HTTP Basic using the Server Key as the username with an empty password.
@@ -167,16 +167,51 @@ paths:
         '200':
           description: Captured
 components:
+  parameters:
+    OrderId:
+      name: orderId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Either the merchant order_id or Midtrans transaction_id
   schemas:
-    RefundRequest:
+    ChargeResponse:
       type: object
       properties:
-        refund_key:
+        status_code:
           type: string
-        amount:
-          type: number
-        reason:
+        status_message:
           type: string
+        transaction_id:
+          type: string
+        order_id:
+          type: string
+        merchant_id:
+          type: string
+        gross_amount:
+          type: string
+        currency:
+          type: string
+        payment_type:
+          type: string
+        transaction_time:
+          type: string
+        transaction_status:
+          type: string
+        fraud_status:
+          type: string
+        actions:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              method:
+                type: string
+              url:
+                type: string
     ChargeRequest:
       type: object
       required:
@@ -253,42 +288,15 @@ components:
           type: string
         metadata:
           type: object
-    ChargeResponse:
+    RefundRequest:
       type: object
       properties:
-        status_code:
+        refund_key:
           type: string
-        status_message:
+        amount:
+          type: number
+        reason:
           type: string
-        transaction_id:
-          type: string
-        order_id:
-          type: string
-        merchant_id:
-          type: string
-        gross_amount:
-          type: string
-        currency:
-          type: string
-        payment_type:
-          type: string
-        transaction_time:
-          type: string
-        transaction_status:
-          type: string
-        fraud_status:
-          type: string
-        actions:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              method:
-                type: string
-              url:
-                type: string
     TransactionStatus:
       type: object
       properties:
@@ -331,14 +339,6 @@ components:
           type: string
         settlement_time:
           type: string
-  parameters:
-    OrderId:
-      name: orderId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Either the merchant order_id or Midtrans transaction_id
   securitySchemes:
     basicAuth:
       type: http
