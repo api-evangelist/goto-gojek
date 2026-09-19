@@ -117,7 +117,7 @@ apis:
   humanURL: https://gobiz.co.id/
   baseURL: https://api.gobiz.co.id
   tags:
-  - Merchant
+  - Merchants
   - Point-of-Sale
   - GoFood
   - Menus
