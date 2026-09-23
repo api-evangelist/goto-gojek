@@ -1,8 +1,7 @@
 {
   "provider": "goto-gojek",
   "sources": [
-    "goto-gojek-tokenization-api-openapi.yml",
-    "goto-gojek-transactions-api-openapi.yml"
+    "_original/goto-gojek-openapi.yml"
   ],
   "outputs": [
     "goto-gojek-tokenization-api-openapi.yml",
@@ -12,9 +11,12 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "goto-gojek-tokenization-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "goto-gojek-transactions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "goto-gojek-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "goto-gojek-tokenization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "goto-gojek-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

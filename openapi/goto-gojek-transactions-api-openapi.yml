@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Midtrans Core API (GoTo Financial) Tokenization Transactions API
+  title: Midtrans Core API (GoTo Financial) Transactions API
   description: Best-effort OpenAPI 3.1 for the Midtrans Core API operated by GoTo Financial (a GoTo Group company). Covers charge, capture, approve, deny, cancel, expire, refund, and status endpoints. Authentication is HTTP Basic using the Server Key as the username with an empty password.
   version: v2
 servers:
@@ -176,6 +176,15 @@ components:
         type: string
       description: Either the merchant order_id or Midtrans transaction_id
   schemas:
+    RefundRequest:
+      type: object
+      properties:
+        refund_key:
+          type: string
+        amount:
+          type: number
+        reason:
+          type: string
     ChargeResponse:
       type: object
       properties:
@@ -288,15 +297,6 @@ components:
           type: string
         metadata:
           type: object
-    RefundRequest:
-      type: object
-      properties:
-        refund_key:
-          type: string
-        amount:
-          type: number
-        reason:
-          type: string
     TransactionStatus:
       type: object
       properties:
