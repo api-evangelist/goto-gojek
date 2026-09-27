@@ -50,7 +50,7 @@ tags:
   - Super App
   - Ride Hailing
   - Food Delivery
-  - Last-Mile Logistics
+  - Last Mile Delivery
   - E-Commerce
   - Digital Payments
   - Indonesia
@@ -88,7 +88,7 @@ apis:
   humanURL: https://www.gojek.com/en-id/gosend/
   baseURL: https://api.gojekapi.com
   tags:
-  - Last Mile
+  - Last Mile Delivery
   - Couriers
   - Indonesia
   - Logistics
@@ -97,6 +97,7 @@ apis:
   - Couriers
   - Indonesia
   - Logistics
+  - Last Mile
   properties:
   - type: ProductPage
     url: https://www.gojek.com/en-id/gosend/
@@ -174,6 +175,13 @@ apis:
   - Payment Gateway
   - Indonesia
   - Cards
+  - Digital Wallet
+  - QRIS
+  tags_raw:
+  - Payments
+  - Payment Gateway
+  - Indonesia
+  - Cards
   - E-Wallets
   - QRIS
   properties:
@@ -195,7 +203,7 @@ apis:
   baseURL: https://app.mokapos.com
   tags:
   - Point-of-Sale
-  - SMB
+  - Small Business
   - Indonesia
   - Inventory
   tags_raw:
