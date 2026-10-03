@@ -168,6 +168,93 @@ paths:
           description: Captured
 components:
   schemas:
+    RefundRequest:
+      type: object
+      properties:
+        refund_key:
+          type: string
+        amount:
+          type: number
+        reason:
+          type: string
+    TransactionStatus:
+      type: object
+      properties:
+        status_code:
+          type: string
+        status_message:
+          type: string
+        transaction_id:
+          type: string
+        order_id:
+          type: string
+        gross_amount:
+          type: string
+        currency:
+          type: string
+        payment_type:
+          type: string
+        transaction_status:
+          type: string
+          enum:
+          - authorize
+          - capture
+          - settlement
+          - pending
+          - deny
+          - cancel
+          - expire
+          - failure
+          - refund
+          - partial_refund
+          - chargeback
+          - partial_chargeback
+        fraud_status:
+          type: string
+          enum:
+          - accept
+          - deny
+          - challenge
+        transaction_time:
+          type: string
+        settlement_time:
+          type: string
+    ChargeResponse:
+      type: object
+      properties:
+        status_code:
+          type: string
+        status_message:
+          type: string
+        transaction_id:
+          type: string
+        order_id:
+          type: string
+        merchant_id:
+          type: string
+        gross_amount:
+          type: string
+        currency:
+          type: string
+        payment_type:
+          type: string
+        transaction_time:
+          type: string
+        transaction_status:
+          type: string
+        fraud_status:
+          type: string
+        actions:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              method:
+                type: string
+              url:
+                type: string
     ChargeRequest:
       type: object
       required:
@@ -244,93 +331,6 @@ components:
           type: string
         metadata:
           type: object
-    ChargeResponse:
-      type: object
-      properties:
-        status_code:
-          type: string
-        status_message:
-          type: string
-        transaction_id:
-          type: string
-        order_id:
-          type: string
-        merchant_id:
-          type: string
-        gross_amount:
-          type: string
-        currency:
-          type: string
-        payment_type:
-          type: string
-        transaction_time:
-          type: string
-        transaction_status:
-          type: string
-        fraud_status:
-          type: string
-        actions:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              method:
-                type: string
-              url:
-                type: string
-    RefundRequest:
-      type: object
-      properties:
-        refund_key:
-          type: string
-        amount:
-          type: number
-        reason:
-          type: string
-    TransactionStatus:
-      type: object
-      properties:
-        status_code:
-          type: string
-        status_message:
-          type: string
-        transaction_id:
-          type: string
-        order_id:
-          type: string
-        gross_amount:
-          type: string
-        currency:
-          type: string
-        payment_type:
-          type: string
-        transaction_status:
-          type: string
-          enum:
-          - authorize
-          - capture
-          - settlement
-          - pending
-          - deny
-          - cancel
-          - expire
-          - failure
-          - refund
-          - partial_refund
-          - chargeback
-          - partial_chargeback
-        fraud_status:
-          type: string
-          enum:
-          - accept
-          - deny
-          - challenge
-        transaction_time:
-          type: string
-        settlement_time:
-          type: string
   parameters:
     OrderId:
       name: orderId
