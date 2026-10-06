@@ -70,7 +70,7 @@ tags_raw:
   - Tokopedia
 url: https://raw.githubusercontent.com/api-evangelist/goto-gojek/refs/heads/main/apis.yml
 created: '2026-05-23'
-modified: '2026-05-23'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: goto-gojek:gosend
@@ -312,6 +312,8 @@ authentication:
   - type: HMACSignature
     description: Payment APIs sign requests with HMAC over a shared merchant secret.
 common:
+  - url: https://www.gotocompany.com/news/press
+    type: Blog
   - type: AgenticAccess
     url: agentic-access/goto-gojek-agentic-access.yml
   - type: DomainSecurity
