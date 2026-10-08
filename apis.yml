@@ -312,6 +312,12 @@ authentication:
   - type: HMACSignature
     description: Payment APIs sign requests with HMAC over a shared merchant secret.
 common:
+  - type: Plans
+    url: plans/goto-gojek-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/goto-gojek-rate-limits.yml
+  - type: FinOps
+    url: finops/goto-gojek-finops.yml
   - url: https://www.gotocompany.com/news/press
     type: Blog
   - type: AgenticAccess
