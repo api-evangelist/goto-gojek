@@ -167,7 +167,51 @@ paths:
         '200':
           description: Captured
 components:
+  parameters:
+    OrderId:
+      name: orderId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Either the merchant order_id or Midtrans transaction_id
   schemas:
+    ChargeResponse:
+      type: object
+      properties:
+        status_code:
+          type: string
+        status_message:
+          type: string
+        transaction_id:
+          type: string
+        order_id:
+          type: string
+        merchant_id:
+          type: string
+        gross_amount:
+          type: string
+        currency:
+          type: string
+        payment_type:
+          type: string
+        transaction_time:
+          type: string
+        transaction_status:
+          type: string
+        fraud_status:
+          type: string
+        actions:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              method:
+                type: string
+              url:
+                type: string
     TransactionStatus:
       type: object
       properties:
@@ -286,42 +330,6 @@ components:
           type: string
         metadata:
           type: object
-    ChargeResponse:
-      type: object
-      properties:
-        status_code:
-          type: string
-        status_message:
-          type: string
-        transaction_id:
-          type: string
-        order_id:
-          type: string
-        merchant_id:
-          type: string
-        gross_amount:
-          type: string
-        currency:
-          type: string
-        payment_type:
-          type: string
-        transaction_time:
-          type: string
-        transaction_status:
-          type: string
-        fraud_status:
-          type: string
-        actions:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              method:
-                type: string
-              url:
-                type: string
     RefundRequest:
       type: object
       properties:
@@ -331,14 +339,6 @@ components:
           type: number
         reason:
           type: string
-  parameters:
-    OrderId:
-      name: orderId
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Either the merchant order_id or Midtrans transaction_id
   securitySchemes:
     basicAuth:
       type: http
