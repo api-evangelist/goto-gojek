@@ -1,4 +1,4 @@
-# GoTo Group (Gojek + Tokopedia) (goto-gojek)
+# GoTo Group (Gojek + Tokopedia)
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,227 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-GoTo Group (PT GoTo Gojek Tokopedia Tbk) is Indonesia's largest
-digital ecosystem, formed by the 2021 merger of ride-hailing /
-on-demand superapp Gojek and e-commerce marketplace Tokopedia. It
-operates three business pillars: On-Demand Services (Gojek — ride
-hailing GoRide / GoCar, food delivery GoFood, parcel delivery
-GoSend, logistics GoBox, courier GoSend), E-Commerce (Tokopedia
-marketplace and Mitra Tokopedia), and Financial Technology (GoTo
-Financial — GoPay, GoPayLater, GoInvestasi). In 2024 GoTo divested
-Tokopedia's e-commerce operations to TikTok Shop / ByteDance,
-retaining a 25% stake in the combined Tokopedia–TikTok Shop
-entity; the developer.tokopedia.com portal now redirects to
-TikTok Shop's partner platform. GoTo continues to operate Gojek
-and GoTo Financial directly. There is no single GoTo group-wide
-developer portal — partner integrations happen at the product
-level (Gojek partner programs, GoPay PSP integrations, TikTok
-Shop Open Platform for the former Tokopedia surface).
+GoTo Group (PT GoTo Gojek Tokopedia Tbk) is Indonesia's largest digital ecosystem, formed by the 2021 merger of ride-hailing / on-demand superapp Gojek and e-commerce marketplace Tokopedia. It operates three business pillars: On-Demand Services (Gojek — ride hailing GoRide / GoCar, food delivery GoFood, parcel delivery GoSend, logistics GoBox, courier GoSend), E-Commerce (Tokopedia marketplace and Mitra Tokopedia), and Financial Technology (GoTo Financial — GoPay, GoPayLater, GoInvestasi). In 2024 GoTo divested Tokopedia's e-commerce operations to TikTok Shop / ByteDance, retaining a 25% stake in the combined Tokopedia–TikTok Shop entity; the developer.tokopedia.com portal now redirects to TikTok Shop's partner platform. GoTo continues to operate Gojek and GoTo Financial directly. There is no single GoTo group-wide developer portal — partner integrations happen at the product level (Gojek partner programs, GoPay PSP integrations, TikTok Shop Open Platform for the former Tokopedia surface).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/goto-gojek/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/goto-gojek/refs/heads/main/apis.yml)
+**Areas:** Super App · Ride Hailing · Food Delivery · Last Mile Delivery · E-Commerce · Digital Payments · Indonesia · Southeast Asia · Gojek · Tokopedia
 
-## Scope
+## GoTo Group (Gojek + Tokopedia) on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** Partner
+Everything profiled for GoTo Group (Gojek + Tokopedia) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/goto-gojek/](https://apis.io/providers/goto-gojek/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Superapp
-- Ride Hailing
-- Food Delivery
-- Last-Mile Logistics
-- E-commerce
-- Digital Payments
-- Indonesia
-- Southeast Asia
-- Gojek
-- Tokopedia
+- [GoSend Logistics API](https://apis.io/apis/goto-gojek/gosend/) — GoSend is Gojek's on-demand last-mile courier service. The GoSend API lets e-commerce platforms, marketplaces, and ERP systems book GoSend Instant and…
+- [GoBiz Merchant Platform](https://apis.io/apis/goto-gojek/gobiz/) — GoBiz is the merchant operating platform for restaurants and retailers selling through GoFood and Gojek's on-demand services. Partner POS / SaaS vendors…
+- [GoPay Payments API](https://apis.io/apis/goto-gojek/gopay/) — GoPay is GoTo Financial's e-money and digital wallet platform in Indonesia. Online and offline merchants integrate via partner payment service providers…
+- [Midtrans Payment Gateway API](https://apis.io/apis/goto-gojek/midtrans/) — Midtrans is GoTo Financial's payment service provider business in Indonesia. The Midtrans API offers full payment gateway coverage — credit/debit cards,…
+- [Moka POS Platform](https://apis.io/apis/goto-gojek/moka-pos/) — Moka is GoTo Financial's cloud POS for Indonesian SMBs, acquired in 2020. It exposes integration APIs and webhooks for inventory sync, sales reporting,…
+- [Tokopedia / TikTok Shop Open Platform](https://apis.io/apis/goto-gojek/tokopedia-tiktok-shop/) — Following GoTo's 2024 divestment of Tokopedia's e-commerce operations to TikTok Shop, integrations for what was formerly the Tokopedia Open API and Mitra…
+- [GoTo Group (Gojek + Tokopedia) Tokenization API](https://apis.io/apis/goto-gojek/goto-gojek-tokenization-api/) — The Tokenization API from GoTo Group (Gojek + Tokopedia) — 3 operation(s) for tokenization.
+- [GoTo Group (Gojek + Tokopedia) Transactions API](https://apis.io/apis/goto-gojek/goto-gojek-transactions-api/) — The Transactions API from GoTo Group (Gojek + Tokopedia) — 10 operation(s) for transactions.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### GoSend Logistics API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-GoSend is Gojek's on-demand last-mile courier service. The
-GoSend API lets e-commerce platforms, marketplaces, and ERP
-systems book GoSend Instant and Same-Day deliveries, fetch
-quotes, track couriers, and receive lifecycle webhook events
-for Indonesia coverage.
+- [Goto Gojek Agentic Access](https://apis.io/agentic-access/goto-gojek/goto-gojek-agentic-access/)
 
-- **Human URL:** [https://www.gojek.com/en-id/gosend/](https://www.gojek.com/en-id/gosend/)
-- **Base URL:** `https://api.gojekapi.com`
+#### Collections (3)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Last-Mile
-- Couriers
-- Indonesia
-- Logistics
+- [Midtrans Core API (GoTo Financial)](https://apis.io/collections/goto-gojek/open-goto-gojek/)
+- [Midtrans Core API (GoTo Financial) Tokenization API](https://apis.io/collections/goto-gojek/open-goto-gojek-tokenization-api/)
+- [Midtrans Core API (GoTo Financial) Tokenization Transactions API](https://apis.io/collections/goto-gojek/open-goto-gojek-transactions-api/)
 
-#### Properties
+#### Security (2)
 
-- [Product Page](https://www.gojek.com/en-id/gosend/)
-- [Business Integration](https://www.gojek.com/en-id/gosend/integrate/)
-- [Postman Collection](collections/goto-gojek.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goto-gojek.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### GoBiz Merchant Platform
+- [Goto Gojek Authentication](https://apis.io/security/goto-gojek/goto-gojek-authentication/)
+- [Goto Gojek Domain Security](https://apis.io/security/goto-gojek/goto-gojek-domain-security/)
 
-GoBiz is the merchant operating platform for restaurants and
-retailers selling through GoFood and Gojek's on-demand
-services. Partner POS / SaaS vendors integrate with GoBiz to
-manage menus, store availability, order acknowledgement, and
-fulfillment.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://gobiz.co.id/](https://gobiz.co.id/)
-- **Base URL:** `https://api.gobiz.co.id`
+Published plans, tiers and prices.
 
-#### Tags
+- [Goto Gojek Plans Pricing](https://apis.io/plans/goto-gojek/goto-gojek-plans-pricing/)
 
-- Merchant
-- POS
-- GoFood
-- Menus
-- Orders
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Product Page](https://gobiz.co.id/)
-- [Postman Collection](collections/goto-gojek.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goto-gojek.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Goto Gojek Rate Limits](https://apis.io/rate-limits/goto-gojek/goto-gojek-rate-limits/)
 
-### GoPay Payments API
+#### FinOps (1)
 
-GoPay is GoTo Financial's e-money and digital wallet platform
-in Indonesia. Online and offline merchants integrate via
-partner payment service providers (e.g. Midtrans, Xendit,
-DOKU) to accept GoPay for wallet checkout, QRIS, and
-recurring billing.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://gopay.co.id/](https://gopay.co.id/)
-- **Base URL:** `https://api.gopay.co.id`
+- [Goto Gojek Finops](https://apis.io/finops/goto-gojek/goto-gojek-finops/)
 
-#### Tags
+## Where to find this API
 
-- Payments
-- Digital Wallet
-- QRIS
-- Indonesia
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
+- [Website](https://www.gotocompany.com/)
+- [Blog](https://www.gotocompany.com/news/press)
 
-- [Product Page](https://gopay.co.id/)
-- [Merchant Info](https://gopay.co.id/merchant)
-- [Postman Collection](collections/goto-gojek.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goto-gojek.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+## API Evangelist rating
 
-### Midtrans Payment Gateway API
+**Kin Score 21.9** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-Midtrans is GoTo Financial's payment service provider business
-in Indonesia. The Midtrans API offers full payment gateway
-coverage — credit/debit cards, bank transfer (Permata,
-Mandiri, BCA, BNI), e-wallets (GoPay, ShopeePay, OVO, DANA),
-installments, and QRIS — for Indonesian merchants.
+| Facet | Score |
+|---|---|
+| Discoverability | 67.0 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 5.3 |
 
-- **Human URL:** [https://docs.midtrans.com/](https://docs.midtrans.com/)
-- **Base URL:** `https://api.midtrans.com`
+**Agent readiness 19.6** — agent-aware
 
-#### Tags
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-- Payments
-- Payment Gateway
-- Indonesia
-- Cards
-- E-Wallets
-- QRIS
+**Regulatory alignment 10.7** — Payments
 
-#### Properties
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/goto-gojek/](https://apis.io/providers/goto-gojek/).
 
-- [Documentation](https://docs.midtrans.com/)
-- [API Reference](https://docs.midtrans.com/en/welcome/index.html)
-- [Postman Collection](collections/goto-gojek.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goto-gojek.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+## How this profile is made
 
-### Moka POS Platform
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-Moka is GoTo Financial's cloud POS for Indonesian SMBs,
-acquired in 2020. It exposes integration APIs and webhooks
-for inventory sync, sales reporting, employee management,
-and customer loyalty programs.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for GoTo Group (Gojek + Tokopedia): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-- **Human URL:** [https://www.mokapos.com/](https://www.mokapos.com/)
-- **Base URL:** `https://app.mokapos.com`
+## Open an issue
 
-#### Tags
-
-- POS
-- SMB
-- Indonesia
-- Inventory
-
-#### Properties
-
-- [Product Page](https://www.mokapos.com/)
-- [Postman Collection](collections/goto-gojek.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goto-gojek.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Tokopedia / TikTok Shop Open Platform
-
-Following GoTo's 2024 divestment of Tokopedia's e-commerce
-operations to TikTok Shop, integrations for what was formerly
-the Tokopedia Open API and Mitra Tokopedia developer surface
-are now served via the TikTok Shop Partner Center, which
-covers products, orders, fulfillment, returns, finance, and
-marketing across the combined Tokopedia + TikTok Shop
-marketplace in Indonesia.
-
-- **Human URL:** [https://partner.tiktokshop.com/docv2/page/overview](https://partner.tiktokshop.com/docv2/page/overview)
-- **Base URL:** `https://open-api.tiktokglobalshop.com`
-
-#### Tags
-
-- E-commerce
-- Marketplace
-- Tokopedia
-- TikTok Shop
-- Orders
-- Products
-
-#### Properties
-
-- [Documentation](https://partner.tiktokshop.com/docv2/page/overview)
-- [Partner Center](https://partner.tiktokshop.com/)
-- [Postman Collection](collections/goto-gojek.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/goto-gojek.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Corporate Website](https://www.gotocompany.com/)
-- [Gojek Website](https://www.gojek.com/)
-- [Tokopedia Website](https://www.tokopedia.com/)
-- [Go To Financial](https://www.gotofinancial.com/)
-- [Go Send](https://www.gojek.com/en-id/gosend/)
-- [Go Biz](https://gobiz.co.id/)
-- [Go Pay](https://gopay.co.id/)
-- [Midtrans](https://midtrans.com/)
-- [Midtrans Docs](https://docs.midtrans.com/)
-- [Moka P O S](https://www.mokapos.com/)
-- [Tik Tok Shop Partner](https://partner.tiktokshop.com/)
-- [Investor Relations](https://www.gotocompany.com/investor-relations)
-- [Newsroom](https://www.gotocompany.com/newsroom)
-- [Sustainability](https://www.gotocompany.com/sustainability)
-- [Careers](https://www.gotocompany.com/careers)
-- [Git Hub Gojek](https://github.com/gojek)
-- [Git Hub Tokopedia](https://github.com/tokopedia)
-- [LinkedIn](https://www.linkedin.com/company/gotocompany/)
-
-## Maintainers
-
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/goto-gojek/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
